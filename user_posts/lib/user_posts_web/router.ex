@@ -15,9 +15,10 @@ defmodule UserPostsWeb.Router do
   end
 
   scope "/", UserPostsWeb do
-    pipe_through :browser
+    pipe_through :api
 
     get "/", PageController, :index
+    resources "/users", UserController, except: [:new, :edit]
   end
 
   # Other scopes may use custom stacks.

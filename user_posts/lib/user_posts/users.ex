@@ -96,6 +96,7 @@ defmodule UserPosts.Users do
     #Repo.delete(query)
     User
     |> where([u], u.id == ^id)
+    |> Repo.one!()
     |> Repo.delete
   end
 
